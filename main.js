@@ -1,11 +1,16 @@
 import ToyReact from './toy-react';
 
-let a = <div id='foo'>
-        <a href='www.baidu.com'>bar</a>
-        <b />
-        <p style={{ color: 'blue' }}>hello</p>
-    </div>
-ToyReact.render(a, document.body);
+function App() {
+    const [state, setState] = ToyReact.useState(1);
+    return (
+        <div>
+            <h1>Count: {state}</h1>
+            <button onClick={() => setState(c => c + 1)}>+</button>
+        </div>
+    )
+}
+const ele = <App name='foo' />
+ToyReact.render(ele, document.body);
 
 // class Square extends Component {
 //     render() {
